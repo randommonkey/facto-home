@@ -1,0 +1,1 @@
+"use strict";var nav=document.querySelector("nav");function affix(e){return window.pageYOffset>100?nav.classList.add("NavAffixed"):nav.classList.remove("NavAffixed")}window.addEventListener("scroll",affix);

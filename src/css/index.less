@@ -1,0 +1,50 @@
+@import 'site.less';
+
+nav {
+  height: auto;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.25s ease-out;
+  width: 100%;
+  z-index: 1;
+  .BurgerBox {
+    .burger(white)
+  }
+  img {
+    filter: brightness(0) invert(1);
+    transition: all 0.25s ease-out;
+  }
+  &.NavAffixed {
+    background: white;
+    .BurgerBox {
+      .burger(black)
+    }
+    img {
+      filter: brightness(1) invert(0);
+    }
+  }
+}
+
+.WelcomeSection {
+  color: white;
+  h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 2vw;
+  }
+  h3 {
+    font-size: 25px;
+    margin: 0;
+  }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 7.5vw;
+      margin-top: 0;
+      margin-bottom: 1vw;
+    }
+    h3 {
+      font-size: 3.5vw;
+    } 
+  }
+}

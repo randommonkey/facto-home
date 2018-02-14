@@ -1,0 +1,1 @@
+"use strict";var burger=document.querySelector(".BurgerBox");burger.addEventListener("click",function(){return burger.classList.toggle("BurgerOpened")});

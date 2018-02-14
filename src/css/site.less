@@ -1,0 +1,176 @@
+@import 'variables.less';
+@import url('https://fonts.googleapis.com/css?family=Bitter|Raleway:300,400');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  main {
+    flex: 1 0 auto;
+  }
+}
+
+/* Fonts */
+.Bitter {
+  font-family: 'Bitter', serif;
+}
+
+.Raleway {
+  font-family: 'Raleway', sans-serif
+}
+
+.FontLight {
+  font-weight: 300;
+}
+
+/* Backgrounds */
+.BgForest {
+  background-color: @forest;
+}
+
+/* Layout */
+.Container {
+  margin: 0 auto;
+  width: 95%;
+  @media screen and (min-width: 768px) {
+    width: 90%;
+  }
+}
+
+.Full {
+  min-height: 100vh;
+}
+
+.Half {
+  min-height: 50vh;
+}
+
+.HalfAndQuarter {
+  min-height: 75vh;
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
+}
+
+.Column.VerticalCenter {
+  justify-content: center
+}
+
+.Column.HorizontalCenter {
+  align-items: center;
+}
+
+.Column.Center {
+  align-items: center;
+  justify-content: center;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.Row.VerticalCenter {
+  align-items: center
+}
+
+.Row.HorizontalCenter {
+  justify-content: center;
+}
+
+.Row.Center {
+  align-items: center;
+  justify-content: center;
+}
+
+.SpaceBetween {
+  justify-content: space-between;
+}
+.test() {
+  color: black;
+}
+/* Burger menu mixin -- apply to BurgerBox class*/
+.burger(@burger-color) {
+  cursor: pointer;
+  height: 20px;
+  width: 25px;
+  .Burger {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    &:before,
+    &:after {
+      background: @burger-color;
+      content: '';
+      height: 4px;
+      left: 0;
+      position: absolute;
+      transition-delay: 0.25s;
+      transition: all 0.25s ease-in-out;
+      width: 100%;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+    span {
+      background: @burger-color;
+      height: 4px;
+      position: relative;
+      transition-delay: 0;
+      transition: all 0.25s cubic-bezier(0.330, 0.065, 0.370, 1.230);
+      width: 100%;
+      &:before {
+        background: @burger-color;
+        content: '';
+        height: 100%;
+        position: absolute;
+        transition-delay: 0;
+        transition: all 0.25s cubic-bezier(0.330, 0.065, 0.370, 1.230);
+        width: 100%;
+      }
+    }
+  }
+  &.BurgerOpened .Burger {
+    &:before {
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition-delay: 0;
+    }
+    &:after {
+      bottom: 50%;
+      opacity: 0;
+      transform: translateY(50%);
+      transition-delay: 0;
+    }
+    span {
+      transform: rotateZ(-45deg);
+      transition-delay: 0.25s;
+      &:before {
+        transform: rotateZ(-90deg);
+        transition-delay: 0.25s;
+      }
+    }
+  }
+}
