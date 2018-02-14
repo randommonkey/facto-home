@@ -16,7 +16,7 @@ nav {
     transition: all 0.25s ease-out;
   }
   &.NavAffixed {
-    background: white;
+    background: @paper;
     .BurgerBox {
       .burger(black)
     }
@@ -30,8 +30,7 @@ nav {
   color: white;
   h1 {
     font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 2vw;
+    margin: 0 0 2vh;
   }
   h3 {
     font-size: 25px;
@@ -46,5 +45,57 @@ nav {
     h3 {
       font-size: 3.5vw;
     } 
+  }
+}
+
+section:not(.WelcomeSection) {
+  h1 {
+    font-size: 25px;
+    margin: 0 0 5vh;
+  }
+  h3 {
+    margin: 0 0 5vh;
+  }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 3.5vw;
+    }
+  }
+}
+
+.ExploreSection {
+  h1 {
+    margin: 0;
+  }
+  .Container {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    @media screen and (min-width: 768px) {
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+  }
+}
+
+.QuadContainer {
+  margin: 2.5% 0;
+  @media screen and (min-width: 768px) {
+    margin: 5% 0;
+  }
+  .QuadItem {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 28.125%;
+      width: 50%;
+    }
+    .QuadContent {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
 }

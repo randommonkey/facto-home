@@ -21,9 +21,15 @@ body {
   main {
     flex: 1 0 auto;
   }
+  footer {
+    padding: 2vw;
+    p {
+      margin: 0 0 10px;
+    }
+  }
 }
 
-/* Fonts */
+/* Text */
 .Bitter {
   font-family: 'Bitter', serif;
 }
@@ -36,9 +42,29 @@ body {
   font-weight: 300;
 }
 
+.TextCenter {
+  text-align: center;
+}
+
+.TextColorWhite {
+  color: white;
+}
+
 /* Backgrounds */
 .BgForest {
   background-color: @forest;
+}
+
+.BgLight {
+  background-color: @light;
+}
+
+.BgSilk {
+  background-color: @silk;
+}
+
+.BgElectric {
+  background-color: @electric;
 }
 
 /* Layout */
@@ -47,6 +73,17 @@ body {
   width: 95%;
   @media screen and (min-width: 768px) {
     width: 90%;
+  }
+}
+
+.SmallContainer {
+  margin: 0 auto;
+  width: 95%;
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+  @media screen and (min-width: 992px) {
+    width: 65%;
   }
 }
 
@@ -101,8 +138,9 @@ body {
 .SpaceBetween {
   justify-content: space-between;
 }
-.test() {
-  color: black;
+
+.Wrap {
+  flex-wrap: wrap;
 }
 /* Burger menu mixin -- apply to BurgerBox class*/
 .burger(@burger-color) {
@@ -172,5 +210,64 @@ body {
         transition-delay: 0.25s;
       }
     }
+  }
+}
+
+.Button {
+  border-radius: 2px;
+  font-family: 'Raleway', sans-serif;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease-in;
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.ButtonColorPale {
+  background-color: @pale;
+  color: white;
+  &:hover {
+    box-shadow: 0px 1px 2px @pale-dark;
+  }
+}
+
+.ButtonColorCharcoal {
+  background-color: @charcoal;
+  color: white;
+  &:hover {
+    box-shadow: 0px 1px 2px @charcoal-dark;
+  }
+}
+
+.ButtonColorForest {
+  background-color: @forest;
+  color: white;
+  &:hover {
+    box-shadow: 0px 1px 2px @forest-dark;
+  }
+}
+
+.Underline {
+  color: black;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  &:before {
+    background: black;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+  }
+  &:hover:before {
+    transform: scaleX(1);
   }
 }
