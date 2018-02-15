@@ -14,6 +14,15 @@ gulp.task('vendors', function () {
 
   gulp.src('./node_modules/vue/dist/vue.min.js')
     .pipe(gulp.dest('./dist/vendors/'))
+
+  gulp.src('./node_modules/datatables.net/js/jquery.dataTables.js')
+    .pipe(gulp.dest('./dist/vendors/'))
+
+  gulp.src('./node_modules/datatables.net-dt/css/jquery.dataTables.css')
+    .pipe(gulp.dest('./dist/vendors/'))
+
+  gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest('./dist/vendors/'))
 })
 
 gulp.task('css', function (cb) {

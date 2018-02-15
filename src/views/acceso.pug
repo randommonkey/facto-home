@@ -1,0 +1,61 @@
+extends ./partials/layout
+
+block title
+  title Acceso a fuentes - Facto | Datasketch
+
+block css
+  link(rel="stylesheet", href="assets/css/inner-page.css")
+  link(rel="stylesheet", href="vendors/jquery.dataTables.css")
+
+block header
+  include ./partials/inner-nav
+
+block main
+  main
+    .Full.Row
+      .Container
+        h1.Bitter Acceso a fuentes
+        #renderer
+          table#table.display
+            thead
+              tr
+                th Fuente
+                th Entidad
+                th Área
+                th Tema
+                th Nombre
+                th Cargo
+            tbody
+              tr(v-for="row in table")
+                td {{row.fuente}}
+                td {{row.entidad}}
+                td {{row.area}}
+                td {{row.tema}}
+                td {{row.nombre}}
+                td {{row.cargo}}
+
+block js
+  script(src="vendors/vue.min.js")
+  script(src="vendors/tabletop.min.js")
+  script(src="vendors/jquery.dataTables.js")
+  script.
+    const key = 'https://docs.google.com/spreadsheets/d/1WmxQ9EcdjRPi7niSU_JMdTOVlYSMF1RDyykiM45Bxug/edit?usp=sharing';
+
+    Tabletop.init({
+      key: key,
+      callback: function (data, tabletop) {
+        const table = tabletop.sheets('Sheet1')
+          .all()
+          .map(row => ({ fuente: row.tipo_fuente, entidad: row.tipo_entidad, area: row.area, tema: row.tema, nombre: row.nombre, cargo: row.cargo }))
+        ;
+
+        const vm = new Vue({
+          el: '#renderer',
+          data: {
+            table: table
+          }
+        })
+
+        $('#table').DataTable();
+      }
+    })

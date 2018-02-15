@@ -8,6 +8,7 @@
     "build:css": "gulp css",
     "build:js": "gulp js",
     "build:views": "gulp views",
+    "build:vendors": "gulp vendors",
     "dev": "npm run build && gulp development"
   },
   "keywords": [],
@@ -27,7 +28,9 @@
     "pump": "^3.0.0"
   },
   "dependencies": {
+    "datatables.net-dt": "^1.10.16",
     "express": "^4.16.2",
+    "jquery": "^3.3.1",
     "tabletop": "^1.5.2",
     "vue": "^2.5.13"
   }

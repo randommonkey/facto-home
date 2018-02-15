@@ -1,7 +1,7 @@
 extends ./partials/layout
 
 block title
-  title Herramientas - Facto | Datasketch
+  title Aprender - Facto | Datasketch
 
 block css
   link(rel="stylesheet", href="assets/css/inner-page.css")
@@ -13,13 +13,13 @@ block main
   main
     .Full.Row
       .Container
-        h1.Bitter Herramientas
+        h1.Bitter Aprender
         #renderer
           .CardContainer
             .Card(v-for="tool in tools")
               .CardHeader
                 .CardTitle
-                  p {{tool.name}}
+                  p {{tool.tutorial}}
                 .CardSubtitle
                   small {{tool.org}}
               .CardContent
@@ -30,4 +30,4 @@ block main
 block js
   script(src="vendors/vue.min.js")
   script(src="vendors/tabletop.min.js")
-  script(src="assets/js/herramientas.js")
+  script(src="assets/js/aprender.js")

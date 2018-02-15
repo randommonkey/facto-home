@@ -1,0 +1,48 @@
+extends ./partials/layout
+
+block title
+  title Aprender - Facto | Datasketch
+
+block css
+  link(rel="stylesheet", href="assets/css/inner-page.css")
+  style.
+    ol {
+      margin-top: 0;
+    }
+    li {
+      line-height: 30px;
+    }
+
+block header
+  include ./partials/inner-nav
+
+block main
+  main
+    .Column: .SmallContainer
+      h1.TextCenter.Bitter How-To: Tips para hacer chequeo
+      .Raleway
+        p Los pasos a seguir para realizar un chequeo son:
+        ol
+          li Seleccionar la frase que tenga las siguientes características:
+            ul
+              li Que la persona sea un candidato al Congreso o a la Presidencia de Colombia.
+              li Que la frase sea expresada en un ambiente público o en redes sociales.
+              li Que sea relevante para la ciudadanía.
+              li Si es una promesa de campaña, que esté soportada en datos o hechos cuya veracidad puede valorarse.
+              li No es una opinión o comentario que no se pueda sustentar con datos.
+              li No es una afirmación relacionada con creencias religiosas.
+              li No es una denuncia de corrupción u otra actividad ilegal.
+              li Es probable que exista información y fuentes disponibles para corroborar la información.
+          li Valorar su importancia tanto en la realización de la campaña electoral como en la ciudadanía.
+          li Consultar al autor de la frase, cuestionar por qué dijo esa frase y qué fuentes utilizó para decirla.
+          li Consultar a las fuentes oficiales o las que administran la información relacionada a la frase.
+          li Consultar a fuentes alternativas que puedan tener esa misma información desde otros enfoques.
+          li Poner el chequeo en contexto para explicar el cómo, cuándo, dónde y por qué de la frase.
+          li Calificar la afirmación de acuerdo a las siguientes categorías:
+            ul
+              li Verdadera: cuando al verificar la frase y los datos consignados en ella, corresponden a la realidad de los hechos.
+              li Aproximada: cuando al verificar la frase y los datos suministrados, se acercan a la realidad de los hechos pero no son exactos.
+              li Ligera: cuando al verificar la frase y los datos suministrados, se alejan de la realidad porque han sido dichos con prisa y sin fundamento.
+              li Inflada: cuando al verificar la frase y los datos suministrados, se alejan de la realidad porque han sido aumentados o magnificados.
+              li Engañosa: cuando al verificar la frase y los datos suministrados, no permiten distinguir la realidad de los hechos.
+              li Falsa: cuando al verificar la frase y los datos suministrados, son completamente contrarios a la realidad de los hechos.

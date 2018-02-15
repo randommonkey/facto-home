@@ -1,1 +1,0 @@
-"use strict";function requestSheet(e,t){Tabletop.init({key:e,callback:t})}
