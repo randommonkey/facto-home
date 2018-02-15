@@ -271,3 +271,45 @@ body {
     transform: scaleX(1);
   }
 }
+
+.Card {
+  border: 1px solid #cacece;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 5%;
+    width: 30%;
+  }
+  @media screen and (min-width: 992px) {
+    margin-bottom: 3.33%;
+    width: 22.5%;
+  }
+  .CardHeader {
+    border-bottom: 1px solid #cacece;
+    .CardTitle p {
+      font-family: 'Bitter', serif;
+      margin: 0 0 2px;
+    }
+  }
+  .CardContent {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.CardButton {
+  border-radius: 2px;
+  font-family: 'Raleway', sans-serif;
+  font-size: small;
+  padding: 5px 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease-in;
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    background: #e4e4e4;
+  }
+}

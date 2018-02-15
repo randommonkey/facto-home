@@ -8,6 +8,14 @@ const uglifyjs = require('gulp-uglify')
 const uglifycss = require('gulp-uglifycss')
 const webserver = require('gulp-webserver')
 
+gulp.task('vendors', function () {
+  gulp.src('./node_modules/tabletop/src/tabletop.min.js')
+    .pipe(gulp.dest('./dist/vendors/'))
+
+  gulp.src('./node_modules/vue/dist/vue.min.js')
+    .pipe(gulp.dest('./dist/vendors/'))
+})
+
 gulp.task('css', function (cb) {
   pump([
     gulp.src('./src/css/*.less'),
@@ -54,4 +62,4 @@ gulp.task('watch', function () {
 
 gulp.task('development', ['webserver', 'watch'])
 
-gulp.task('default', ['css', 'js', 'views'])
+gulp.task('default', ['vendors', 'css', 'js', 'views'])

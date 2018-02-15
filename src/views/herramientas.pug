@@ -1,0 +1,37 @@
+extends ./partials/layout
+
+block title
+  title Herramientas - Facto | Datasketch
+
+block css
+  link(rel="stylesheet", href="assets/css/herramientas.css")
+
+block header
+  nav
+    .Container.Row.VerticalCenter.SpaceBetween
+      .BurgerBox: .Burger: span
+      a(href="https://www.datasketch.co/es" target="_blank" rel="noopener noreferrer"): img(src="assets/media/ds.png", alt="")
+
+block main
+  main
+    .Full.Row
+      .Container
+        h1.Bitter Herramientas
+        #renderer
+          .CardContainer.Row.Wrap.SpaceBetween
+            .Card(v-for="tool in tools")
+              .CardHeader
+                .CardTitle
+                  p {{tool.name}}
+                .CardSubtitle
+                  small {{tool.org}}
+              .CardContent
+                p {{tool.description}}
+              .CardFooter
+                a.CardButton(v-bind:href="tool.link" target="_blank" rel="nooopener noreferrer") Visitar
+
+block js
+  script(src="vendors/vue.min.js")
+  script(src="vendors/tabletop.min.js")
+  script(src="assets/js/request.js")
+  script(src="assets/js/herramientas.js")
