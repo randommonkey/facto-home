@@ -1,1 +1,1 @@
-"use strict";var burger=document.querySelector(".BurgerBox");burger.addEventListener("click",function(){return burger.classList.toggle("BurgerOpened")});
+"use strict";var burger=document.querySelector(".BurgerBox"),nav=document.querySelector("nav"),body=document.body;burger.addEventListener("click",function(){burger.classList.toggle("BurgerOpened"),nav.classList.toggle("MenuOpened"),body.classList.toggle("NoScroll")});

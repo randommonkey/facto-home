@@ -16,6 +16,10 @@ body {
   width: 100%;
 }
 
+body.NoScroll {
+  overflow: hidden;
+}
+
 #wrapper {
   min-height: 100%;
   main {
@@ -309,4 +313,41 @@ body {
     text-decoration: none;
     background: #e4e4e4;
   }
+}
+
+.Menu {
+  background: rgba(0,0,0,1);
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: all 0.25s ease-in-out;
+  width: 0%;
+  a {
+    color: white;
+    font-size: x-large;
+    margin-bottom: 10px;
+    position: relative;
+    text-decoration: none;
+    &:before {
+      background: white;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transition: all 0.25s ease-in-out;
+      width: 0;
+    }
+    &:hover:before {
+      width: 100%;
+    }
+
+  }
+}
+
+.MenuOpened .Menu {
+  width: 100%;
 }
