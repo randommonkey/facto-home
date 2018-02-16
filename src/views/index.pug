@@ -5,6 +5,7 @@ block title
 
 block css
   link(rel="stylesheet", href="assets/css/index.css")
+  script(defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js")
 
 block header
   nav
@@ -21,32 +22,31 @@ block main
       .SmallContainer
         h1.Bitter.TextCenter ¿Qué es fact checking?
         h3.Raleway.FontLight Nuestro objetivo es verificar las declaraciones de los candidatos a congreso sobre asuntos relevantes a la campaña electoral, ya sea por el protagonismo de quien las emite, por el tema referido o por su impacto mediático. Con el fin de fortalecer el debate público, encontrar imprecisiones, demostrar incoherencias, aclarar interpretaciones y resaltar verdades.
-    section.HalfAndQuarter.BgSilk.Column.VerticalCenter.TipsSection
+    section.Half.BgSilk.Column.VerticalCenter.TipsSection
       .Container.TextCenter
         h1.Bitter How To
         h3.Raleway.FontLight Tips para hacer chequeos
         a.Button.ButtonColorCharcoal(href="tips.html") Ver más
-    section.Full.SearchSection
+    section.Half.SearchSection
+      .Container
     section.BgLight.Half.Column.VerticalCenter.AccessSection
       .Container.TextCenter
         h1.Bitter Accede a las fuentes
         a.Button.ButtonColorForest(href="acceso.html") Ver datos
-    section.HalfAndQuarter.Column.VerticalCenter.ExploreSection
+    section.Column.ExploreSection
       .Container
         h1.Bitter.TextCenter Explora
-        .QuadContainer.Row.Wrap
-          .QuadItem.Raleway.BgForest
-            .QuadContent.Column.Center
-              a.Underline(href="#") Organizaciones
-          .QuadItem.Raleway.BgSilk
-            .QuadContent.Column.Center
-              a.Underline(href="aprender.html") Recursos Externos
-          .QuadItem.Raleway.BgSilk
-            .QuadContent.Column.Center
-              a.Underline(href="#") Bases de datos
-          .QuadItem.Raleway.BgElectric
-            .QuadContent.Column.Center
-              a.Underline(href="herramientas.html") Herramientas
+        .Row.SpaceBetween.Wrap
+          .TriadItem.Column.HorizontalCenter.TextCenter
+            i.fas.fa-external-link-square-alt.fa-3x
+            a.Button(href="recursos-externos.html") Recursos Externos
+          .TriadItem.Column.HorizontalCenter.TextCenter
+            i.fas.fa-database.fa-3x
+            a.Button(href="bases-de-datos.html") Bases de datos
+          .TriadItem.Column.HorizontalCenter.TextCenter
+            i.fas.fa-wrench.fa-3x
+            a.Button(href="herramientas.html") Herramientas
+        
           
 
 
