@@ -1,0 +1,75 @@
+extends ./partials/layout
+
+block title
+  title Frases - Facto | Datasketch
+
+block css
+  link(rel="stylesheet", href="assets/css/inner-page.css")
+  link(rel="stylesheet", href="vendors/jquery.dataTables.css")
+
+block header
+  include ./partials/inner-nav
+
+block main
+  main
+    .Full.Row
+      .Container
+        h1.Bitter Frases para chequear
+        #renderer
+          table#table.display.nowrap(cellspacing="0" width="100%")
+            thead
+              tr
+                th #
+                th Quién
+                th Cargo (Aspirante)
+                th Región
+                th Frase
+                th Nivel
+                th Observación
+                th Área
+                th Dónde
+                th Url
+                th Cuándo
+                th Contexto
+            tbody
+              tr(v-for="row in table")
+                td {{row.numero}}
+                td {{row.quien}}
+                td {{row.cargo}}
+                td {{row.region}}
+                td {{row.frase}}
+                td {{row.nivel}}
+                td {{row.observacion}}
+                td {{row.area}}
+                td {{row.donde}}
+                td {{row.url}}
+                td {{row.cuando}}
+                td {{row.contexto}}
+
+block js
+  script(src="vendors/vue.min.js")
+  script(src="vendors/tabletop.min.js")
+  script(src="vendors/jquery.dataTables.js")
+  script.
+    const key = 'https://docs.google.com/spreadsheets/d/1-doapJ98kMM98uCiUUFTIrxXABAtiPCBh9URADWeqeA/edit?usp=sharing';
+
+    Tabletop.init({
+      key: key,
+      callback: function (data, tabletop) {
+        const table = tabletop.sheets('Sheet1').all();
+
+        const vm = new Vue({
+          el: '#renderer',
+          data: {
+            table: table
+          }
+        })
+
+        $('#table').DataTable({
+          scrollX: true,
+          scrollY: '100vh',
+          scrollCollapse: true,
+          paging: false
+        });
+      }
+    })
