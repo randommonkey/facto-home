@@ -1,0 +1,1 @@
+.cards{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:20px}.card h3{margin:0 0 10px;font-weight:normal}.card img{margin-top:10px}

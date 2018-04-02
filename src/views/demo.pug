@@ -1,0 +1,46 @@
+extends ./partials/layout
+
+block title
+	title Demo | Facto
+
+block css
+	link(rel="stylesheet", href="assets/css/inner-page.css")
+	link(rel="stylesheet", href="assets/css/demo.css")
+
+block header
+	include ./partials/inner-nav
+
+block main
+	main(style="padding: 20px 0")
+		.Full.Row
+			.Container
+				h1.Bitter.TextCenter Facto Demo
+				img.ImgCenter(src="assets/media/image2.png", alt="")
+				h2.Bitter.TextCenter Easy to filter cards with all the information the site
+				.Row.Center.Wrap
+					img(src="assets/media/image5.png", alt="Mockup" width="30%")
+					img(src="assets/media/image8.png", alt="Mockup" width="30%")
+				h2.Bitter.TextCenter Sample app design. User interaction with articles, texts or data input and data driven output to help the fact checking process
+				img.ImgCenter(src="assets/media/image7.png", alt="")
+				h2.Bitter.TextCenter Sample Apps to be developed
+				.cards
+					.card.Column.Bitter
+						h3 Scan documents visually for relevant information
+						a(href="http://viz.datasketch.co/beta/custom/datasketch/texto-acuerdos/" target="_blank") See sample
+						img.ImgCenter(src="assets/media/image6.gif", alt="Gif")
+					.card.Column.Bitter
+						h3 Easy to browse open data on different indicators about cities or regions
+						a(href="https://randommonkey.shinyapps.io/appCiudatos/" target="_blank") See sample
+						img.ImgCenter(src="assets/media/image9.gif", alt="Gif")
+					.card.Column.Bitter
+						h3 Explore open connections databases
+						a(href="http://demo.whois.datasketch.co/" target="_blank") See sample
+						img.ImgCenter(src="assets/media/image4.gif", alt="Gif")
+					.card.Column.Bitter
+						h3 General visualization app
+						a(href="https://randommonkey.shinyapps.io/viz_highcharts_bar/" target="_blank") See sample
+						img.ImgCenter(src="assets/media/image3.gif", alt="Gif")
+					.card.Column.Bitter
+						h3 Use public records for investigations around candidates
+						a(href="http://especiales.datasketch.co/congreso-2018/los-mas.html" target="_blank") See sample
+						img.ImgCenter(src="assets/media/image1.gif", alt="Gif")
